@@ -59,22 +59,15 @@
       lsp = {
         enable = true;
         servers = {
-          elixirls = {
-            enable = true;
-          };
-          lua_ls = {
-            enable = true;
-          };
-          marksman = {
-            enable = true;
-          };
-          pyright = {
-            enable = true;
-          };
-          # sqls = {enable = true;};
-          ts_ls = {
-            enable = true;
-          };
+          elixirls.enable = true;
+          html.enable = true;
+          jsonls.enable = true;
+          lua_ls.enable = true;
+          marksman.enable = true;
+          pyright.enable = true;
+          taplo.enable = true;
+          ts_ls.enable = true;
+          yamlls.enable = true;
         };
         keymaps.diagnostic = {
           "<leader>j" = "goto_next";
