@@ -68,7 +68,15 @@
           taplo.enable = true;
           texlab.enable = true;
           ts_ls.enable = true;
-          yamlls.enable = true;
+          yamlls = {
+            enable = true;
+            settings = {
+              format.enable = true;
+              hover = true;
+              completion = true;
+              validate = true;
+            };
+          };
         };
         keymaps.diagnostic = {
           "<leader>j" = "goto_next";
