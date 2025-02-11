@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   config = {
     colorschemes.oxocarbon.enable = true;
     enableMan = false;
@@ -7,26 +7,24 @@
     globals = {
       mapleader = " ";
     };
-    opts =
-      let
-        twidth = 2;
-      in
-      {
-        autoindent = true;
-        clipboard = "unnamedplus";
-        compatible = false;
-        expandtab = true;
-        hlsearch = true;
-        incsearch = true;
-        mouse = "a";
-        number = true;
-        wrap = false;
-        # spell = true;
-        sw = twidth;
-        ts = twidth;
-        softtabstop = twidth;
-        foldlevel = 99;
-      };
+    opts = let
+      twidth = 2;
+    in {
+      autoindent = true;
+      clipboard = "unnamedplus";
+      compatible = false;
+      expandtab = true;
+      hlsearch = true;
+      incsearch = true;
+      mouse = "a";
+      number = true;
+      wrap = false;
+      # spell = true;
+      sw = twidth;
+      ts = twidth;
+      softtabstop = twidth;
+      foldlevel = 99;
+    };
     editorconfig = {
       enable = true;
     };
@@ -37,7 +35,6 @@
       bufferline.enable = true;
       comment.enable = true;
       fugitive.enable = true;
-      # none-ls.enable = false;
       none-ls = {
         enable = true;
         sources = {
@@ -51,8 +48,11 @@
             write_good.enable = true;
           };
           formatting = {
-            alejandra.enable = true;
             black.enable = true;
+            nixfmt = {
+              enable = true;
+              package = pkgs.nixfmt-rfc-style;
+            };
           };
         };
       };
@@ -110,11 +110,11 @@
             "<CR>" = "cmp.mapping.confirm({ select = true })";
           };
           sources = [
-            { name = "path"; }
+            {name = "path";}
             {
               name = "nvim_lsp";
             }
-            { name = "luasnip"; }
+            {name = "luasnip";}
             {
               name = "buffer"; # Words from other open buffers can also be suggested.
               option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
