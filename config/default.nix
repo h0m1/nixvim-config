@@ -66,6 +66,7 @@
           marksman.enable = true;
           pyright.enable = true;
           taplo.enable = true;
+          texlab.enable = true;
           ts_ls.enable = true;
           yamlls.enable = true;
         };
