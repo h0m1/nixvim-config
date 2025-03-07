@@ -38,6 +38,7 @@
       bufferline.enable = true;
       comment.enable = true;
       fugitive.enable = true;
+      friendly-snippets.enable = true;
       none-ls = {
         enable = true;
         sources = {
@@ -102,7 +103,9 @@
       lsp-format = {
         enable = true;
       };
-      luasnip.enable = true;
+      luasnip = {
+        enable = true;
+      };
       nix.enable = true;
       nvim-autopairs.enable = true;
       cmp = {
