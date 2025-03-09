@@ -64,6 +64,7 @@
       lsp = {
         enable = true;
         servers = {
+          cssls.enable = true;
           elixirls.enable = true;
           html.enable = true;
           jsonls.enable = true;
