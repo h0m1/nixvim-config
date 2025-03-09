@@ -36,9 +36,10 @@
     '';
     plugins = {
       bufferline.enable = true;
+      colorizer.enable = true;
       comment.enable = true;
-      fugitive.enable = true;
       friendly-snippets.enable = true;
+      fugitive.enable = true;
       none-ls = {
         enable = true;
         sources = {
