@@ -1,10 +1,14 @@
 { pkgs, ... }:
 {
+  imports = [
+    ./plugins/default.nix
+  ];
   config = {
     colorschemes.oxocarbon.enable = true;
     enableMan = false;
     viAlias = true;
     vimAlias = true;
+    # diagnostics.virtual_text = true;
     globals = {
       mapleader = " ";
     };
