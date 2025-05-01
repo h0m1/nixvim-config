@@ -74,6 +74,7 @@
           jsonls.enable = true;
           lua_ls.enable = true;
           marksman.enable = true;
+          omnisharp.enable = true;
           pyright.enable = true;
           taplo.enable = true;
           texlab.enable = true;
