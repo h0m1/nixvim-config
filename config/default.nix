@@ -57,6 +57,7 @@
             write_good.enable = true;
           };
           formatting = {
+            djlint.enable = true;
             nixfmt = {
               enable = true;
               package = pkgs.nixfmt-rfc-style;
