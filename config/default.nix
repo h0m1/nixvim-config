@@ -51,6 +51,7 @@
             statix.enable = true;
           };
           diagnostics = {
+            djlint.enable = true;
             markdownlint.enable = true;
             statix.enable = true;
             write_good.enable = true;
