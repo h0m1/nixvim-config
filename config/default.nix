@@ -52,12 +52,10 @@
           };
           diagnostics = {
             markdownlint.enable = true;
-            pylint.enable = true;
             statix.enable = true;
             write_good.enable = true;
           };
           formatting = {
-            black.enable = true;
             nixfmt = {
               enable = true;
               package = pkgs.nixfmt-rfc-style;
@@ -75,7 +73,14 @@
           lua_ls.enable = true;
           marksman.enable = true;
           omnisharp.enable = true;
-          pyright.enable = true;
+          pyright = {
+            enable = true;
+            settings = {
+              pyright.disableOrganizeImports = true;
+              python.analysis.ignore = [ "*" ];
+            };
+          };
+          ruff.enable = true;
           taplo.enable = true;
           texlab.enable = true;
           ts_ls.enable = true;
