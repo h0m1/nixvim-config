@@ -77,7 +77,7 @@
             enable = true;
             settings = {
               pyright.disableOrganizeImports = true;
-              python.analysis.ignore = [ "*" ];
+              # python.analysis.ignore = [ "*" ];
             };
           };
           ruff.enable = true;
