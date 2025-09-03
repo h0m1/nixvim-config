@@ -5,14 +5,14 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixvim.url = "github:nix-community/nixvim";
     flake-parts.url = "github:hercules-ci/flake-parts";
+    treefmt-nix.url = "github:numtide/treefmt-nix";
   };
 
   outputs =
-    {
-      nixvim,
-      flake-parts,
-      nixpkgs,
-      ...
+    { nixvim
+    , flake-parts
+    , nixpkgs
+    , ...
     }@inputs:
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [
@@ -39,7 +39,12 @@
           nvim = nixvim'.makeNixvimWithModule nixvimModule;
         in
         {
-          formatter = pkgs.nixfmt-rfc-style;
+          formatter = inputs.treefmt-nix.lib.mkWrapper nixpkgs.legacyPackages.${system} {
+            projectRootFile = "flake.nix";
+            programs = {
+              nixpkgs-fmt.enable = true;
+            };
+          };
           checks = {
             # Run `nix flake check .` to verify that your config is not broken
             default = nixvimLib.check.mkTestDerivationFromNixvimModule nixvimModule;

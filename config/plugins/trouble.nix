@@ -2,8 +2,7 @@
 {
   plugins.trouble = {
     enable = true;
-    settings = {
-    };
+    settings = { };
   };
   keymaps = lib.mkIf config.plugins.trouble.enable [
     {
